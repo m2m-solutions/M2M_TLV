@@ -10,7 +10,8 @@ enum class ResourceId : uint16_t {
 	FirmwareVersion = 3,
 	ErrorCode = 11,
 	DeviceType = 17,
-	Temperature = 3300,
+	Temperature = 3303,
+	OnOffSwitch = 3342,
 	notInUse = 65535
 };
 
