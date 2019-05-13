@@ -549,7 +549,7 @@ size_t M2M_TLV::readOpaque(uint8_t *dst, size_t dstLength, M2M_TLV::ResourceSpec
 	size_t resourceLength;
 
 	findResource(rs, pos, resourceLength);
-
+	
 	if (dstLength < 1)
 	{
 		return resourceLength;
