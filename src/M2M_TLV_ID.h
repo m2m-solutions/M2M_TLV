@@ -107,6 +107,10 @@ enum class IpsoResourceId: uint16_t
 	// IPSO
 	DigitalInputState = 5500,
 	SensorValue = 5700,
+	XValue = 5702,
+	YValue = 5703,
+	ZValue = 5704,
+	Direction = 5705,
 	notInUse = 65535
 };
 
