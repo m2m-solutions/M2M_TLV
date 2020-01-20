@@ -114,10 +114,12 @@ enum class IpsoResourceId: uint16_t
 	notInUse = 65535
 };
 
-enum class M2MResourceId: uint16_t
+enum M2MResourceId: uint16_t
 {
+	ValueTypeStart = 30000, // kUnknown
 	CellularICCID = 30019,
 	CellularIMEI = 30020,
+	MessageType = 32768
 };
 
 #endif
