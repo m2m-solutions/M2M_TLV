@@ -114,12 +114,23 @@ enum class IpsoResourceId: uint16_t
 	notInUse = 65535
 };
 
-enum M2MResourceId: uint16_t
+enum class M2MResourceId: uint16_t
 {
-	ValueTypeStart = 30000, // kUnknown
 	CellularICCID = 30019,
 	CellularIMEI = 30020,
+	FWUrl = 30069,
+	SharedHash = 30070,
+	DeviceHash = 30071,
 	MessageType = 32768
+};
+
+enum class ErrorCode : uint8_t {
+	noError = 0,
+	cellularInitFailed = 1,
+	cellularConnectFailed = 2,
+	mqttConnectFailed = 10,
+	mqttTooManyRetries = 11,
+	unknownError = 99
 };
 
 #endif
