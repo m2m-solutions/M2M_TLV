@@ -118,9 +118,10 @@ enum class M2MResourceId: uint16_t
 {
 	CellularICCID = 30019,
 	CellularIMEI = 30020,
-	FWUrl = 30069,
+	DataUrl = 30069,
 	SharedHash = 30070,
 	DeviceHash = 30071,
+	FinishUrl = 30072,
 	MessageType = 32768
 };
 

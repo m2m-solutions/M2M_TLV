@@ -35,7 +35,7 @@ M2M_TLV::ObjectLink::ObjectLink(uint16_t oid, uint16_t oiid)
 // Input constructor
 //
 M2M_TLV::Input::Input(M2M_TLV::IdType t, uint16_t i, M2M_TLV::DataType d, size_t l, int64_t v)
-	: type{t}, id{i}, dataType{d}, length{l}, integer{v}
+	: type{t}, dataType{d}, id{i}, length{l}, integer{v}
 {
 	switch (dataType) {
 	case BOOLEAN:
@@ -65,7 +65,7 @@ M2M_TLV::Input::Input(M2M_TLV::IdType t, uint16_t i, M2M_TLV::DataType d, size_t
 }
 
 M2M_TLV::Input::Input(M2M_TLV::IdType t, uint16_t i, M2M_TLV::DataType d, size_t l, void *v)
-	: type{t}, id{i}, dataType{d}, length{l}, opaque{v} {}
+	: type{t}, dataType{d}, id{i}, length{l}, opaque{v} {}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //
