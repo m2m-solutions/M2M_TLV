@@ -131,6 +131,12 @@ enum class ErrorCode : uint8_t {
 	cellularConnectFailed = 2,
 	mqttConnectFailed = 10,
 	mqttTooManyRetries = 11,
+	mqttTopicOverflow = 12,
+	flashInitFailed = 20,
+	flashFdiskFailed = 21,
+	flashFormatFailed = 22,
+	flashMountFailed = 23,
+	fwUpdateFailed = 24,
 	unknownError = 99
 };
 
