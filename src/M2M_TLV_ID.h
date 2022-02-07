@@ -118,6 +118,7 @@ enum class M2MResourceId: uint16_t
 {
 	CellularICCID = 30019,
 	CellularIMEI = 30020,
+	SignalQuality = 30021,
 	DataUrl = 30069,
 	SharedHash = 30070,
 	DeviceHash = 30071,
