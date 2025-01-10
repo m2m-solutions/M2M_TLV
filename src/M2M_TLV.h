@@ -41,7 +41,7 @@ public:
 
 		Input(IdType t, uint16_t i, DataType d, size_t l, int64_t v);
 		Input(IdType t, uint16_t i, DataType d, size_t l, void *v);
-		Input() = default;
+		Input();
 	};
 
 	static Input objectInstance(uint16_t id);
