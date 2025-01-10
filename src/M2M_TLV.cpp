@@ -67,6 +67,7 @@ M2M_TLV::Input::Input(M2M_TLV::IdType t, uint16_t i, M2M_TLV::DataType d, size_t
 M2M_TLV::Input::Input(M2M_TLV::IdType t, uint16_t i, M2M_TLV::DataType d, size_t l, void *v)
 	: type{t}, dataType{d}, id{i}, length{l}, opaque{v} {}
 
+M2M_TLV::Input::Input(){}
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Input creation functions
