@@ -106,6 +106,13 @@ enum class IpsoResourceId: uint16_t
 {
 	// IPSO
 	DigitalInputState = 5500,
+	DigitalInputCounter = 5501,
+	DigitalInputPolarity = 5502,
+	DigitalInputDebounce = 5503,
+	DigitalInputEdgeSelection = 5504,
+	DigitalInputCounterReset = 5505,
+	CurrentTime = 5506,
+	FractionalTime = 5507,
 	SensorValue = 5700,
 	XValue = 5702,
 	YValue = 5703,
