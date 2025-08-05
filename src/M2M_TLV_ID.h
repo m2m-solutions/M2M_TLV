@@ -1,7 +1,7 @@
 #ifndef __M2M_TLV_ID_H__
 #define __M2M_TLV_ID_H__
 
-#include "Arduino.h"
+#include <cstdint>
 
 enum class ObjectId: uint16_t
 {
