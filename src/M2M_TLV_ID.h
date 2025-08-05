@@ -3,10 +3,10 @@
 
 #include <cstdint>
 
-enum class ObjectId: uint16_t
-{
+enum class ObjectId: uint16_t {
 	Device = 3,
 	Connectivity = 4,
+	FirmwareUpdate = 5,
 	Location = 6,
 	// IPSO
 	DigitalInput = 3200,
@@ -63,8 +63,7 @@ enum class ObjectId: uint16_t
 	M2MSolutions = 30000,
 };
 
-enum class DeviceResourceId: uint16_t
-{
+enum class DeviceResourceId: uint16_t {
 	Manufacturer = 0,
 	ModelNumber = 1,
 	SerialNumber = 2,
@@ -81,8 +80,24 @@ enum class DeviceResourceId: uint16_t
 	BatteryStatus = 20
 };
 
-enum class ConnectivityResourceId: uint16_t
-{
+enum class FirmwareUpdate: uint16_t {
+	Package = 0, // Opaque, Firmware package 
+	PackageURI = 1, // String, URI to the firmware package
+	Update = 2, // command to start firmware update
+	State = 3, // int, Indicates current state with respect to this firmware update
+	UpdateResult = 5, // int, Contains the result of downloading or updating the firmware
+	PkgName = 6, // String, Name of the Firmware Package
+	PkgVersion = 7, // String, Version of the Firmware package
+	FirmwareUpdateProtocolSupport = 8, // int, This resource indicates what protocols the LwM2M Client implements to retrieve firmware images
+	FirmwareUpdateDeliveryMethod = 9, // int, The LwM2M Client uses this resource to indicate its support for transferring firmware images to the client either via the Package Resource (=push) or via the Package URI Resource (=pull) mechanism
+	Cancel = 10, // Cancels firmware update
+	Severity = 11, // int, Severity of the firmware image
+	LastStateChangeTime = 12, // time, This resource stores the time when the State resource is changed
+	MaximumDeferPeriod = 13, // uint, The number of seconds a user can defer the software update
+	AutomaticUpgradeatDownload = 14 // bool, Determines if the Firmware Upgrade will proceed automatically when the firmware download has completed
+};
+
+enum class ConnectivityResourceId: uint16_t {
 	NetworkBearer = 0,
 	RadioSignalStrength = 2,
 	LinkQuality = 3,
@@ -92,8 +107,7 @@ enum class ConnectivityResourceId: uint16_t
 	CellId = 8,
 };
 
-enum LocationResourceId: uint16_t
-{
+enum LocationResourceId: uint16_t {
 	Latitude = 0,
 	Longitude = 1,
 	Altitude = 2,
@@ -102,8 +116,7 @@ enum LocationResourceId: uint16_t
 	Speed = 6,
 };
 
-enum class IpsoResourceId: uint16_t
-{
+enum class IpsoResourceId: uint16_t {
 	// IPSO
 	DigitalInputState = 5500,
 	DigitalInputCounter = 5501,
@@ -121,8 +134,7 @@ enum class IpsoResourceId: uint16_t
 	notInUse = 65535
 };
 
-enum class M2MResourceId: uint16_t
-{
+enum class M2MResourceId: uint16_t {
 	CellularICCID = 30019,
 	CellularIMEI = 30020,
 	SignalQuality = 30021,
