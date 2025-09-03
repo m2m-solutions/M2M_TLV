@@ -475,8 +475,8 @@ bool M2M_TLV::readBoolean(M2M_TLV::ResourceSpecifier rs)
 
 double M2M_TLV::readDouble(M2M_TLV::ResourceSpecifier rs)
 {
-	uint64_t eightBytes;
-	size_t   length;
+	uint64_t eightBytes = 0;
+	size_t   length = 0;
 
 	if (!readUint(eightBytes, length, rs))
 		return NAN;
