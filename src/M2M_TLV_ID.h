@@ -59,6 +59,7 @@ enum class ObjectId: uint16_t {
 	Rate = 3346,
 	PushButton = 3347,
 	MultistateSelector = 3348,
+	ModbusConnection = 10374, // This LwM2M Object is used to configure a Modbus protocol connection.
 	// M2M Solutions
 	M2MSolutions = 30000,
 };
@@ -159,6 +160,18 @@ enum class ErrorCode : uint8_t {
 	flashMountFailed = 23,
 	fwUpdateFailed = 24,
 	unknownError = 99
+};
+
+enum class ModbusConnectionResources: uint16_t {
+	Address = 0, // string, Address uniquely defining the Modbus connection within a given physical layer.
+	PhysicalLayerType = 1, // Integer, 0: Modbus TCP, 1: Modbus RTU (RS-232), 2: Modbus RTU (RS-485)
+	Enable = 2, // Boolean, Enables or disables this Modbus connection
+	Baudrate = 3, // Integer, Baudrate for the RTU link layer
+	StopBits = 4, // Integer, Number of stop bits to use for the RTU link layer.
+	Parity = 5, // Integer, Parity bit type to use for the RTU link layer.
+	HardwareControlFlowMode = 6, // Integer, Type of hardware flow control to use for the RTU link layer.
+	AvailableRTUPorts = 7, // string, List of all valid values for the "Address" resource when Physical Layer Type is set to Modbus RTU.
+	State = 8 // Integer, State of this Modbus connection. 0: disabled, 1: connecting, 2: successfully connected, 3: invalid or unsupported configuration, 4: connection error
 };
 
 #endif
